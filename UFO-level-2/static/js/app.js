@@ -17,8 +17,13 @@ tableData.forEach((ufoSighting) => {
     });
   });
 
-// Use D3 to select the Filter button
+// Use D3 to select the filter button and input fields
 var button = d3.select("#filter-btn");
+var inputField1 = d3.select("#datetime");
+var inputField2 = d3.select("#city");
+var inputField3 = d3.select("#state");
+var inputField4 = d3.select("#country");
+var inputField5 = d3.select("#shape");
 
 // On click of the button, call filterTable function
 button.on("click", filterTable);
@@ -27,11 +32,11 @@ function filterTable() {
     // Clear Table Area
     tbody.html("");
     // Read in the value from the inputField
-    filterDate = d3.select("#datetime");
-    filterCity = d3.select("#city");
-    filterState = d3.select("#state");
-    filterCountry = d3.select("#country");
-    filterShape = d3.select("#shape");
+    filterDate = inputField1.property("value");
+    filterCity = inputField2.property("value");
+    filterState = inputField3.property("value");
+    filterCountry = inputField4.property("value");
+    filterShape = inputField5.property("value");
 
     // if input field is not blank, filter the original table to include
     // only sightings w criteria that match then pass it on to next filter.
