@@ -19,6 +19,7 @@ tableData.forEach((ufoSighting) => {
 
 // Use D3 to select the Date Time input field and the Filter button
 var button = d3.select("#filter-btn");
+var inputField = d3.select("#datetime");
 
 // On click of the button, call filterTable function
 button.on("click", filterTable);
